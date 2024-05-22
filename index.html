@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Чойс</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./assets/libs/swiper-slider/swiper.min.css" />
+</head>
+<body>
+  <div class="product">
+    <div class="product__header">
+      <div class="product__header-wrapper">
+        <div class="product__header-info">
+          <img src="./assets/img/avatar.png" alt="avatar" class="product__header-avatar">
+          <span class="product__header-nickname">monochrome</span>
+          <span class="product__header-time">11h</span>
+        </div>
+        <button class="product__subscribe sign">Подписаться</button>
+      </div>
+    </div>
+    <div class="product__images">
+      <!-- SwiperMin -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./assets/img/main-product-1.jpg" alt="product">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/img/main-product-1.jpg" alt="product">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/img/main-product-1.jpg" alt="product">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/libs/swiper-slider/swiper.min.js"></script>
+
+  <!-- Initialize SwiperMin -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+</body>
+</html>
