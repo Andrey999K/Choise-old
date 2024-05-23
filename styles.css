@@ -685,3 +685,7 @@ body {
 .popup__button-not-now {
   margin-top: -15px;
 }
+
+.hidden {
+  display: none;
+}

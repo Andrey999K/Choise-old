@@ -30,8 +30,8 @@ buttonNotNow.addEventListener("click", () => {
     animationOn = true;
     popupBg.classList.add("hidden-popup");
     popup.classList.add("hide");
-    popupOpen = false;
     setTimeout(() => {
+      popupOpen = false;
       popupBg.classList.add("hidden");
       animationOn = false;
     }, 1000);
