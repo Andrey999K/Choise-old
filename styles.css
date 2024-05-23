@@ -416,7 +416,36 @@ body {
   overflow: hidden;
 }
 
+.related-card-other .related-card__images {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
 .related-card__images {
+  width: 100%;
+}
+
+.related-card__images-other {
+  display: flex;
+  gap: 1px;
+  justify-content: space-between;
+}
+
+.related-card__image-other, .related-card-other__main-image {
+  width: 100%;
+  max-width: 100% !important;
+}
+
+.related-card__image-other {
+  max-width: 61px;
+  max-height: 61px;
+}
+
+.related-card-other__main-image img {
+  display: block;
   width: 100%;
 }
 
@@ -429,7 +458,7 @@ body {
   font-size: 10px;
 }
 
-.related-card__name {
+.related-card__title {
   margin-top: 2px;
   color: #000000;
   font-family: "SF Pro Text Semibold", sans-serif;
@@ -440,6 +469,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 11px;
+  margin-top: 7px;
+}
+
+.related-card__profile {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.related-card__profile-avatar {
+  height: 16px;
+  width: 16px;
+}
+
+.related-card__profile-avatar img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.related-card__profile-username {
+  font-family: "SF Pro Text Medium", sans-serif;
   font-size: 11px;
 }
 
