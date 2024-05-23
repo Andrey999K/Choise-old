@@ -145,8 +145,8 @@
           <p class="related__tab selected">Похожее</p>
           <p class="related__tab">С этим сочетается</p>
         </div>
-        <div class="related__grid">
-          <div class="related__card related-card">
+        <div class="related__grid grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 184, gutter: 8 }'>
+          <div class="related__card grid-item related-card">
             <div class="related-card__images">
               <div class="swiper-card swiper-card1">
                 <div class="swiper-wrapper">
@@ -183,7 +183,7 @@
               </div>
             </div>
           </div>
-          <div class="related__card related-card-other">
+          <div class="related__card grid-item related-card-other">
             <div class="related-card__images">
               <div class="related-card-other__main-image">
                 <img src="./assets/img/card-images-1.jpg" alt="Чёрно-белое фото девушки">
@@ -218,7 +218,7 @@
               </div>
             </div>
           </div>
-          <div class="related__card related-card">
+          <div class="related__card grid-item related-card">
             <div class="related-card__images">
               <div class="swiper-card swiper-card2">
                 <div class="swiper-wrapper">
@@ -255,7 +255,7 @@
               </div>
             </div>
           </div>
-          <div class="related__card related-card">
+          <div class="related__card grid-item related-card">
             <div class="related-card__images">
               <div class="swiper-card swiper-card3">
                 <div class="swiper-wrapper">
@@ -292,7 +292,7 @@
               </div>
             </div>
           </div>
-          <div class="related__card related-card">
+          <div class="related__card grid-item related-card">
             <div class="related-card__images">
               <div class="swiper-card swiper-card4">
                 <div class="swiper-wrapper">
@@ -381,6 +381,7 @@
   </div>
 
   <script src="./assets/libs/swiper-slider/swiper.min.js"></script>
+  <script src="./assets/libs/masonry-grid/masonry.pkgd.min.js"></script>
 
   <!-- Initialize SwiperMin -->
   <script>
@@ -412,6 +413,17 @@
       pagination: {
         el: ".swiper-pagination",
       },
+    });
+  </script>
+
+  <!--  Masonry grid-->
+  <script>
+    var grid = document.querySelector('.grid');
+    var msnry = new Masonry( grid, {
+      // options...
+      itemSelector: '.grid-item',
+      columnWidth: 184,
+      gutter: 8
     });
   </script>
 </body>
