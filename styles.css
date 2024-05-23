@@ -613,8 +613,13 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+  transition: 1s;
   z-index: 9999;
   background: rgba(37, 37, 37, 0.85);
+}
+
+.popup-bg.hidden-popup {
+  background: rgba(37, 37, 37, 0);
 }
 
 .popup {
@@ -624,11 +629,12 @@ body {
   border-radius: 34px 34px 0 0;
   z-index: 9999;
   width: 100%;
+  transition: 1s;
   background: #fff;
 }
 
-.popup.hidden {
-  display: none;
+.popup.hide {
+  transform: translateY(477px);
 }
 
 .popup__content {
