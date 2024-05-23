@@ -681,3 +681,7 @@ body {
   color: #fff;
   background: #000;
 }
+
+.popup__button-not-now {
+  margin-top: -15px;
+}
