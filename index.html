@@ -119,10 +119,10 @@
                 </div>
                 <span>ламп</span>
               </div>
+              <button class="product-info__tags-more">
+                + ещё
+              </button>
             </div>
-            <button class="product-info__tags-more">
-              + ещё
-            </button>
           </div>
         </div>
       </div>
@@ -418,11 +418,14 @@
 
   <!--  Masonry grid-->
   <script>
-    var grid = document.querySelector('.grid');
-    var msnry = new Masonry( grid, {
+    const grid = document.querySelector('.grid');
+    const containerWidth = grid.offsetWidth; // Получить ширину контейнера
+    // Вычислить желаемую ширину столбца
+    const widthGrid =  containerWidth / 2 - 4;
+    const masonry = new Masonry(grid, {
       // options...
       itemSelector: '.grid-item',
-      columnWidth: 184,
+      columnWidth: widthGrid,
       gutter: 8
     });
   </script>
