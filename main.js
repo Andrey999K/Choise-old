@@ -35,6 +35,5 @@ buttonNotNow.addEventListener("click", () => {
       popupBg.classList.add("hidden");
       animationOn = false;
     }, 1000);
-
   }
 })
