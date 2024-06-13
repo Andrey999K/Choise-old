@@ -923,6 +923,10 @@ body {
   display: none;
 }
 
+.selection {
+  display: none;
+}
+
 @media (min-width: 1280px) {
 
   .header {
@@ -1180,6 +1184,7 @@ body {
   }
 
   .selection {
+    display: block;
     margin-bottom: 600px;
   }
 
@@ -1226,6 +1231,18 @@ body {
     color: var(--gray);
     font-size: 14px;
   }
+  
+  .grid-desktop {
+    position: relative;
+  }
+}
+
+.grid {
+  position: relative;
+}
+
+.grid-item {
+  position: absolute;
 }
 
 .selection__card-avatar.no-avatar {
