@@ -757,31 +757,25 @@
   </script>
 
   <!--  Masonry grid-->
-  <script>
-    setTimeout(() => {
-      const grid = document.querySelector('.grid');
-      const containerWidth = grid.offsetWidth; // Получить ширину контейнера
-      // Вычислить желаемую ширину столбца
-      const widthGrid =  (containerWidth - 8) / 2;
-      const masonry = new Masonry(grid, {
-        // options...
-        itemSelector: '.grid-item',
-        columnWidth: widthGrid,
-        gutter: 8
-      });
+<!--  <script>-->
 
-      const gridDesktop = document.querySelector('.grid-desktop');
-      const containerWidthDesktop = gridDesktop.offsetWidth; // Получить ширину контейнера
-      // Вычислить желаемую ширину столбца
-      const widthGridDesktop =  (containerWidthDesktop - 64) / 5;
-      const masonryDesktop = new Masonry(gridDesktop, {
-        // options...
-        itemSelector: '.grid-item',
-        columnWidth: widthGridDesktop,
-        gutter: 16
-      });
-    }, 0);
+<!--      // const images = document.querySelectorAll('img');-->
+<!--      // const promises = [];-->
+<!--      //-->
+<!--      // for (let image of images) {-->
+<!--      //   promises.push(new Promise(function(resolve, reject) {-->
+<!--      //     image.onload = resolve;-->
+<!--      //     image.onerror = reject;-->
+<!--      //   }));-->
+<!--      // }-->
+<!--      //-->
+<!--      // Promise.all(promises).then(function() {-->
+<!--      //   // Ваш код, который должен выполняться после загрузки всех изображений-->
+<!--      //   console.log("Все изображения загружены!");-->
+<!--      // });-->
 
-  </script>
+<!--      -->
+
+<!--  </script>-->
 </body>
 </html>
