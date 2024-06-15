@@ -61,16 +61,21 @@ const findLowColumn = (heightColumns) => {
 }
 
 const masonryInit = (widthScreen) => {
+  console.log("widthScreen", widthScreen);
   let classGrid = "grid";
   let columnWidth = 184.5;
   let gap = 8;
   let columnNumber = 2;
+  const body = document.querySelector("body");
   if (widthScreen >= 1280) {
-    classGrid = "grid-desktop";
+    if (body.className !== "product-page") {
+      classGrid = "grid-desktop";
+    }
     columnWidth = 232;
     gap = 20;
     columnNumber = 5;
   }
+  console.log(`.${classGrid} .grid-item__container`)
   const gridItems = Array.from(document.querySelectorAll(`.${classGrid} .grid-item__container`));
   let rowNumber = 0;
   let heightColumns = [];
