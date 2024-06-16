@@ -68,7 +68,7 @@ const masonryInit = (widthScreen) => {
   let columnNumber = 2;
   const body = document.querySelector("body");
   if (widthScreen >= 1280) {
-    if (body.className !== "product-page" && body.className !== "selection-page") {
+    if (body.className !== "product-page" && body.className !== "selection-page" && body.className !== "profile") {
       classGrid = "grid-desktop";
     }
     columnWidth = 232;
