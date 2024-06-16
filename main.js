@@ -5,14 +5,14 @@ const popup = document.querySelector(".popup");
 const buttonNotNow = document.querySelector(".popup__button-not-now");
 
 const onPopupOpen = () => {
-  // animationOn = true;
-  // popupBg.classList.remove("hidden");
-  // setTimeout(() => {
-  //   popupBg.classList.remove("hidden-popup");
-  //   popup.classList.remove("hide");
-  // }, 1);
-  // popupOpen = true;
-  // setTimeout(() => animationOn = false, 1000);
+  animationOn = true;
+  popupBg.classList.remove("hidden");
+  setTimeout(() => {
+    popupBg.classList.remove("hidden-popup");
+    popup.classList.remove("hide");
+  }, 1);
+  popupOpen = true;
+  setTimeout(() => animationOn = false, 1000);
 };
 
 onPopupOpen();
