@@ -68,7 +68,7 @@ const masonryInit = (widthScreen) => {
   let columnNumber = 2;
   const body = document.querySelector("body");
   if (widthScreen >= 1280) {
-    if (body.className !== "product-page") {
+    if (body.className !== "product-page" && body.className !== "selection-page") {
       classGrid = "grid-desktop";
     }
     columnWidth = 232;
@@ -93,7 +93,9 @@ const masonryInit = (widthScreen) => {
       gridItems[i].parentElement.style.left = `${(columnWidth + gap) * numberColumn}px`;
       heightColumns[numberColumn] += gap + gridItems[i].clientHeight;
     }
+    console.log("BBBBBBBB")
     if (i === gridItems.length - 1) {
+      console.log(document.querySelector(`.${classGrid}`))
       document.querySelector(`.${classGrid}`).style.height = `${findLowColumn(heightColumns)}px`;
     }
   }
