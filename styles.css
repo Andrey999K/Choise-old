@@ -1013,7 +1013,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 17px;
-  /*padding: 15px;*/
+  padding: 15px;
 }
 
 .product__header {
@@ -1374,6 +1374,10 @@ body {
 
   .product {
     display: block;
+  }
+
+  .product__info {
+    padding: 0;
   }
 
   .selection__title {
