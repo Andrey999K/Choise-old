@@ -1380,6 +1380,10 @@ body {
     padding: 0;
   }
 
+  .related__tabs {
+    font-size: 28px;
+  }
+
   .selection__title {
     text-align: center;
     font-size: 28px;
@@ -1559,6 +1563,10 @@ body {
 
   .product__description span {
     display: none;
+  }
+
+  .related {
+    margin-top: 15px;
   }
 
 
