@@ -38,7 +38,7 @@ button {
 
 .wrapper {
   width: 100%;
-  max-width: 393px;
+  /*max-width: 393px;*/
   margin: 0 auto;
 }
 
@@ -182,13 +182,13 @@ body {
 
 .swiper {
   width: 100%;
-  height: 562px;
+  /*height: 562px;*/
 }
 
 .swiper-card {
   position: relative;
   width: 100%;
-  height: 242px;
+  /*height: 242px;*/
 }
 
 .swiper-slide {
@@ -213,7 +213,7 @@ body {
 .slide-container {
   margin: 0 auto;
   width: 100%;
-  max-width: 393px;
+  /*max-width: 393px;*/
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
@@ -574,7 +574,7 @@ body {
 }
 
 .related-card-other {
-  height: 383px;
+  /*height: 383px;*/
 }
 
 .related-card-other .related-card__images {
@@ -610,15 +610,24 @@ body {
 }
 
 .related-card__image-other {
+  position: relative;
+  height: 0;
+  padding-bottom: 33%;
   display: flex;
   align-items: center;
-  max-width: 61px;
-  max-height: 61px;
+  max-width: 33%;
+  /*max-width: 61px;*/
+  /*max-height: 61px;*/
   overflow: hidden;
 }
 
 .related-card__image-other img {
+  position: absolute;
+  top: 0;
+  height: 100%;
   max-width: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
 }
 
 .related-card-other__main-image img {
@@ -969,11 +978,15 @@ body {
 
 .product__images {
   width: 100%;
-  max-width: 508px;
+  /*max-width: 508px;*/
   border-radius: 32px;
   overflow: hidden;
   display: flex;
   gap: 3px;
+}
+
+.product__image-main {
+  width: 100%;
 }
 
 .product__image-main img {
@@ -983,6 +996,7 @@ body {
 }
 
 .product__images-other {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -999,7 +1013,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 17px;
-  padding: 15px;
+  /*padding: 15px;*/
 }
 
 .product__header {
@@ -1128,6 +1142,8 @@ body {
 .profile .related-card__images {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .profile .related-card-other .related-card__images {

@@ -63,8 +63,9 @@ const findLowColumn = (heightColumns) => {
 const masonryInit = (widthScreen) => {
   console.log("widthScreen", widthScreen);
   let classGrid = "grid";
-  let columnWidth = 184.5;
   let gap = 8;
+  // let columnWidth = 184.5;
+  let columnWidth = (document.querySelector(`.${classGrid}`).clientWidth - gap) / 2;
   let columnNumber = 2;
   const body = document.querySelector("body");
   if (widthScreen >= 1280) {
