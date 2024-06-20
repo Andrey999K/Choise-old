@@ -15,6 +15,7 @@
 :root {
   --gray: #636366;
   --white: #F9F9FB;
+  --border: #F1F1F1;
 }
 
 * {
@@ -27,7 +28,7 @@
   list-style: none;
 }
 
-a {
+a, button {
   color: #0F0F0F;
 }
 
@@ -91,15 +92,27 @@ body {
 
 .header {
   display: none;
+  border-bottom: 1px solid var(--border);
 }
 
 .product-mobile {
-  background: #ffffff;
+  background: transparent;
 }
 
 .product-mobile__header {
+  font-family: "SF Pro Text Medium", sans-serif;
   padding: 5px;
   font-size: 12px;
+  border-bottom: solid 1px #E4E4E4;
+  background: #FFFFFF;
+}
+
+.product-mobile__images {
+  margin-top: 2px;
+}
+
+.product-mobile__header-time {
+  color: var(--gray);
 }
 
 .product-mobile__header-wrapper {
@@ -295,12 +308,15 @@ body {
 
 .section {
   margin-top: 2px;
+  border-radius: 16px;
+  background: #FFFFFF;
 }
 
 .section__content {
+  overflow: hidden;
   border-radius: 16px;
   padding: 15px;
-  background: #fff;
+  /*background: #fff;*/
 }
 
 .product-info__content {
@@ -561,10 +577,6 @@ body {
   font-size: 16px;
   color: #AEAEB2;
   font-family: "SF Pro Text Semibold", sans-serif;
-}
-
-.related__tabs--justify-start {
-  justify-content: start !important;
 }
 
 .related__tab {
@@ -981,9 +993,13 @@ body {
 
 .selection-page .product {
   display: block;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: 2px;
+  margin-bottom: 0;
   max-height: initial !important;
+}
+
+.selection-page .related__tabs {
+  justify-content: flex-start;
 }
 
 .product {
@@ -1008,7 +1024,7 @@ body {
 .product__images {
   width: 100%;
   /*max-width: 508px;*/
-  border-radius: 32px;
+  border-radius: 24px;
   overflow: hidden;
   display: flex;
   gap: 3px;
@@ -1152,7 +1168,7 @@ body {
 }
 
 .profile .related__tabs {
-  gap: 0;
+  gap: 32px;
   width: calc(100% + 30px);
   margin-left: -15px;
   margin-right: -15px;
@@ -1183,7 +1199,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  /*padding: 10px 15px;*/
 }
 
 .user-profile__back {
@@ -1223,7 +1239,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 15px;
+  padding: 20px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
 }
 
 .user-profile__info {
@@ -1328,18 +1346,19 @@ body {
   display: flex;
   gap: 12px;
   align-items: center;
+  width: 100%;
 }
 
 .user-profile__actions button {
   border-radius: 200px;
   width: 100%;
-  max-width: 180px;
   font-size: 14px;
   padding: 7px;
   font-family: "SF Pro Text Semibold", sans-serif;
 }
 
 .user-profile__subscribe {
+  width: 100%;
   background: #000;
   color: #FFFFFF;
 }
@@ -1348,8 +1367,17 @@ body {
   background: var(--white);
 }
 
+.download {
+  border-radius: 16px;
+  background: #FFFFFF;
+}
+
 
 @media (min-width: 1280px) {
+
+  .section {
+    background: transparent;
+  }
 
   .header {
     display: flex;
@@ -1359,13 +1387,13 @@ body {
   .header__content {
     display: flex;
     align-items: center;
-    padding: 16px 0;
+    padding: 11px 0;
   }
 
   .header__search {
     display: flex;
     align-items: center;
-    background: #F1F1F1;
+    background: var(--border);
     border-radius: 9999px;
     padding: 12px 18px;
     font-size: 20px;
@@ -1384,6 +1412,7 @@ body {
     font-size: 20px;
     margin-left: 16px;
     outline: none;
+    color: var(--gray);
   }
 
   .header__downloads-list {
@@ -1407,6 +1436,15 @@ body {
 
   .product__info {
     padding: 0;
+  }
+
+  .product-info__name {
+    font-size: 20px;
+    font-family: "SF Pro Text Bold", sans-serif;
+  }
+
+  .product-info__price {
+    font-size: 20px;
   }
 
   .related__tabs {
@@ -1588,6 +1626,10 @@ body {
 
   .product__content {
     background: transparent;
+    padding: 20px;
+    margin: -20px auto;
+    border-radius: 32px;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
   }
 
   .product__description span {
@@ -1644,8 +1686,26 @@ body {
   }
 
   .product-page .product__info {
+    gap: 0 !important;
     margin-left: 0;
     max-width: 475px;
+  }
+
+  .product-description__title,
+  .product-description__text {
+    font-size: 20px;
+  }
+
+  .related-card__site {
+    font-size: 12px;
+  }
+
+  .related-card__bottom {
+    font-size: 12px;
+  }
+
+  .related-card__title {
+    font-size: 14px;
   }
 
   .product-page .slide-container {
@@ -1692,6 +1752,10 @@ body {
     display: block;
   }
 
+  .selection-page .related__tabs {
+    justify-content: center !important;
+  }
+
   .selection-page {
     background: #FFFFFF;
   }
@@ -1702,6 +1766,15 @@ body {
 
   .product__content {
     flex-direction: row;
+  }
+
+  .selection-page .product {
+    margin-top: 45px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .selection-page .related__tabs {
+    justify-content: flex-start;
   }
 
   /* Стили для страницы "Профиль" */
@@ -1724,6 +1797,15 @@ body {
 
   .profile {
     background: #FFFFFF;
+  }
+
+  .profile .related__tab {
+    width: initial;
+    text-align: initial;
+  }
+
+  .profile .related__tab.selected {
+    border: none;
   }
 
   .user-profile__description {
@@ -1766,6 +1848,18 @@ body {
 
   .user-profile__actions button {
     padding: 15px;
+  }
+
+  .user-profile__actions button {
+    max-width: 180px;
+  }
+
+  .section.user-profile {
+    margin: 45px auto 11px;
+  }
+
+  .related-card__profile-username {
+    font-size: 12px;
   }
 
 }

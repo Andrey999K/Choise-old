@@ -52,14 +52,21 @@
   <div class="wrapper">
     <div class="header__content">
       <a href="#" class="header__logo">
-        <img src="./assets/img/logo.svg" alt="Чойс">
+        <div class="header__logo-icon">
+          <img src="./assets/img/logo.svg" alt="Чойс">
+        </div>
+        <div class="header__logo-info">
+          <h2 class="header__logo-name">Чойс — соцсеть шопинга</h2>
+          <p class="header__logo-description">Товары, подборки, креаторы</p>
+        </div>
       </a>
-      <label class="header__search">
+      <div class="header__search">
         <div class="header__search-icon">
           <img src="./assets/img/search.svg" alt="search">
         </div>
-        <input type="text" class="header__search-input" placeholder="Поиск идеальных покупок">
-      </label>
+        <div class="header__search-input">Поиск идеальных покупок</div>
+<!--        <input type="text" class="header__search-input" placeholder="Поиск идеальных покупок">-->
+      </div>
       <ul class="header__downloads-list">
         <li class="header__downloads-item">
           <a href="#" class="header__downloads-link">
@@ -78,16 +85,16 @@
 
 <section class="section user-profile">
   <div class="wrapper">
-    <div class="user-profile__header">
-      <button class="user-profile__back">
-        <img src="./assets/img/back.svg" alt="back">
-      </button>
-      <span class="user-profile__header-nickname">@miroshnikova</span>
-      <button class="user-profile__settings">
-        <img src="./assets/img/settings.svg" alt="settings">
-      </button>
-    </div>
     <div class="user-profile__main-content">
+      <div class="user-profile__header">
+        <button class="user-profile__back">
+          <img src="./assets/img/back.svg" alt="back">
+        </button>
+        <span class="user-profile__header-nickname">@miroshnikova</span>
+        <button class="user-profile__settings">
+          <img src="./assets/img/settings.svg" alt="settings">
+        </button>
+      </div>
       <div class="user-profile__info">
         <div class="user-profile__main-info">
           <div class="user-profile__name">
@@ -402,9 +409,9 @@
 <section class="section download">
   <div class="wrapper">
     <div class="section__content download__content">
-      <h2 class="download__title">Приложение “Чойс” для лёгких покупок</h2>
+      <h2 class="download__title">Приложение “Чойс” для поиска идеальных покупок</h2>
       <p class="download__description">Сохраняйте и выбирайте что нравится, создавайте подборки, подписывайтесь на интересных авторов и находите то, что вас вдохновляет</p>
-      <a href="#" class="download__button">Скачать Чойс</a>
+      <a href="#" class="download__button">Открыть Чойс</a>
     </div>
   </div>
 </section>
