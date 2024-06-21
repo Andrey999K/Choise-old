@@ -224,7 +224,12 @@ body {
 
 .swiper {
   width: 100%;
+  background-color: var(--white) !important;
   /*height: 562px;*/
+}
+
+.swiper-wrapper {
+  background-color: var(--white) !important;
 }
 
 .swiper-card {
