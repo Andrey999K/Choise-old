@@ -28,6 +28,10 @@
   list-style: none;
 }
 
+h1, h2, h3, h4, div, input, button, ul, li, section, header, a, p, span {
+  letter-spacing: -1px;
+}
+
 a, button {
   color: #0F0F0F;
 }
@@ -224,12 +228,14 @@ body {
 
 .swiper {
   width: 100%;
-  background-color: var(--white) !important;
+  /*background-color: var(--white) !important;*/
+  background-color: transparent;
   /*height: 562px;*/
 }
 
 .swiper-wrapper {
-  background-color: var(--white) !important;
+  /*background-color: var(--white) !important;*/
+  background-color: transparent;
 }
 
 .swiper-card {
@@ -264,13 +270,13 @@ body {
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
-  background: transparent;
+  background: transparent !important;
 }
 
 .slide-container img {
   display: block;
   width: 100%;
-  background: transparent;
+  background: transparent !important;
 }
 
 .swiper-slide img {
@@ -1247,6 +1253,8 @@ body {
   padding: 20px;
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 32px;
+  max-width: 1056px;
+  margin: auto;
 }
 
 .user-profile__info {
