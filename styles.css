@@ -1380,6 +1380,10 @@ body {
 
 @media (min-width: 1280px) {
 
+  .popup-bg {
+    display: none;
+  }
+
   .section {
     background: transparent;
   }
