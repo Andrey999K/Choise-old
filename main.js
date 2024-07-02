@@ -3,19 +3,42 @@ let animationOn = false;
 const popupBg = document.querySelector(".popup-bg");
 const popup = document.querySelector(".popup");
 const buttonNotNow = document.querySelector(".popup__button-not-now");
+const popupDesktop = document.querySelector(".popup-bg-desktop");
 
 const onPopupOpen = () => {
   animationOn = true;
-  popupBg.classList.remove("hidden");
-  setTimeout(() => {
-    popupBg.classList.remove("hidden-popup");
-    popup.classList.remove("hide");
-  }, 1);
-  popupOpen = true;
-  setTimeout(() => animationOn = false, 1000);
+  if (window.innerWidth < 1280) {
+    popupBg.classList.remove("hidden");
+    setTimeout(() => {
+      popupBg.classList.remove("hidden-popup");
+      popup.classList.remove("hide");
+    }, 1);
+    popupOpen = true;
+    setTimeout(() => animationOn = false, 1000);
+  } else {
+    popupDesktop.classList.remove("hidden");
+    setTimeout(() => {
+      popupDesktop.classList.add("show");
+    }, 0);
+    setTimeout(() => animationOn = false, 500);
+  }
 };
 
-onPopupOpen();
+popupDesktop.addEventListener("click", e => {
+  if (!event.target.closest(".popup-desktop__wrapper")) {
+    animationOn = true;
+    popupDesktop.classList.remove("show");
+    setTimeout(() => {
+      popupDesktop.classList.add("hidden");
+      popupOpen = false;
+      animationOn = false;
+    }, 500);
+  }
+})
+
+if (window.innerWidth < 1280) {
+  onPopupOpen();
+}
 
 window.addEventListener("click", event => {
   if (event.target !== buttonNotNow && !event.target.closest(".swiper")) {
@@ -61,10 +84,8 @@ const findLowColumn = (heightColumns) => {
 }
 
 const masonryInit = (widthScreen) => {
-  console.log("widthScreen", widthScreen);
   let classGrid = "grid";
   let gap = 8;
-  // let columnWidth = 184.5;
   let columnWidth = (document.querySelector(`.${classGrid}`).clientWidth - gap) / 2;
   let columnNumber = 2;
   const body = document.querySelector("body");
@@ -76,7 +97,6 @@ const masonryInit = (widthScreen) => {
     gap = 20;
     columnNumber = 5;
   }
-  console.log(`.${classGrid} .grid-item__container`)
   const gridItems = Array.from(document.querySelectorAll(`.${classGrid} .grid-item__container`));
   let rowNumber = 0;
   let heightColumns = [];
@@ -94,9 +114,7 @@ const masonryInit = (widthScreen) => {
       gridItems[i].parentElement.style.left = `${(columnWidth + gap) * numberColumn}px`;
       heightColumns[numberColumn] += gap + gridItems[i].clientHeight;
     }
-    console.log("BBBBBBBB")
     if (i === gridItems.length - 1) {
-      console.log(document.querySelector(`.${classGrid}`))
       document.querySelector(`.${classGrid}`).style.height = `${findLowColumn(heightColumns)}px`;
     }
   }
