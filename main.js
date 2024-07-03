@@ -4,6 +4,7 @@ const popupBg = document.querySelector(".popup-bg");
 const popup = document.querySelector(".popup");
 const buttonNotNow = document.querySelector(".popup__button-not-now");
 const popupDesktop = document.querySelector(".popup-bg-desktop");
+console.log(popupDesktop)
 
 const onPopupOpen = () => {
   animationOn = true;
