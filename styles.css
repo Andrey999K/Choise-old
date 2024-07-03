@@ -1098,8 +1098,8 @@ body {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   opacity: 1;
 }
 
