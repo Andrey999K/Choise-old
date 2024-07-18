@@ -1980,6 +1980,7 @@ body {
 
   .grid-desktop {
     position: relative;
+    overflow: hidden;
   }
 
   .product__footer {
@@ -2264,6 +2265,7 @@ body {
 
 .grid {
   position: relative;
+  overflow: hidden;
 }
 
 .grid-item {

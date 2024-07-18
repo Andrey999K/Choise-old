@@ -95,28 +95,49 @@ const masonryInit = (widthScreen) => {
       classGrid = "grid-desktop";
     }
     columnWidth = 232;
-    gap = 20;
+    gap = 16;
     columnNumber = 5;
   }
   const gridItems = Array.from(document.querySelectorAll(`.${classGrid} .grid-item__container`));
+
+  // Если всего 1 карточка
+  if (gridItems?.length === 1) {
+    gridItems[0].parentElement.style.top = "0px";
+    gridItems[0].parentElement.style.left = "0px";
+    document.querySelector(`.${classGrid}`).style.height = `${gridItems[0].clientHeight}px`;
+    return;
+  }
+
+  // Если карточек меньше, чем колонок
+  // if (gridItems?.length < columnNumber) {
+  //   gridItems[0].parentElement.style.top = "0px";
+  //   gridItems[0].parentElement.style.left = "0px";
+  //   document.querySelector(`.${classGrid}`).style.height = `${gridItems[0].clientHeight}px`;
+  //   return;
+  // }
+
   let rowNumber = 0;
   let heightColumns = [];
   for (let i = 0; i < columnNumber; i++) {
-    heightColumns.push(gridItems[i].clientHeight);
+    heightColumns.push(gridItems[i]?.clientHeight);
   }
-  for (let i = 1; i < gridItems.length; i++) {
-    rowNumber = Math.floor(i / columnNumber);
-    if (rowNumber === 0) {
-      gridItems[i].parentElement.style.top = "0px";
-      gridItems[i].parentElement.style.left = `${(columnWidth + gap) * (i % columnNumber)}px`;
-    } else {
-      const { high, numberColumn } = findHighColumn(heightColumns);
-      gridItems[i].parentElement.style.top = `${high + gap}px`;
-      gridItems[i].parentElement.style.left = `${(columnWidth + gap) * numberColumn}px`;
-      heightColumns[numberColumn] += gap + gridItems[i].clientHeight;
-    }
-    if (i === gridItems.length - 1) {
-      document.querySelector(`.${classGrid}`).style.height = `${findLowColumn(heightColumns)}px`;
+  if (gridItems?.length > 1) {
+    for (let i = 1; i < gridItems.length; i++) {
+      rowNumber = Math.floor(i / columnNumber);
+      if (rowNumber === 0) {
+        gridItems[i].parentElement.style.top = "0px";
+        gridItems[i].parentElement.style.left = `${(columnWidth + gap) * (i % columnNumber)}px`;
+      } else {
+        const { high, numberColumn } = findHighColumn(heightColumns);
+        gridItems[i].parentElement.style.top = `${high + gap}px`;
+        gridItems[i].parentElement.style.left = `${(columnWidth + gap) * numberColumn}px`;
+        heightColumns[numberColumn] += gap + gridItems[i].clientHeight;
+      }
+      if (i === gridItems.length - 1) {
+        const grid = document.querySelector(`.${classGrid}`);
+        grid.style.height = `${findLowColumn(heightColumns)}px`;
+        grid.style.overflow = "visible";
+      }
     }
   }
 }
