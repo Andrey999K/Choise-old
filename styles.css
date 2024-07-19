@@ -16,6 +16,13 @@
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
+* Browsers: last 5 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
 
@@ -1207,8 +1214,8 @@ body {
 }
 
 .product {
-  margin-top: 65px;
-  margin-bottom: 45px;
+  margin-top: 45px;
+  margin-bottom: 25px;
   height: 100%;
   max-height: 677px;
 }
@@ -1675,31 +1682,35 @@ body {
 }
 
 
-@media (min-width: 1280px) and (max-width: 1920px) {
-  /* Стили для экранов от 1280px до 1920px */
-  .wrapper, .join-qr {
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.8); /* Уменьшить масштаб на 20% */
-  }
+/*@media (min-width: 1280px) and (max-width: 1920px) {*/
+/*  !* Стили для экранов от 1280px до 1920px *!*/
+/*  .wrapper, .join-qr {*/
+/*  !*.content {*!*/
+/*    -webkit-transform: scale(0.8);*/
+/*    -ms-transform: scale(0.8);*/
+/*    transform: scale(0.8); !* Уменьшить масштаб на 20% *!*/
+/*    -webkit-transform-origin: 50% 0;*/
+/*    -ms-transform-origin: 50% 0;*/
+/*    transform-origin: 50% 0;*/
+/*  }*/
 
-  .product {
-    margin: 0 !important;
-  }
+/*  .product {*/
+/*    margin: 0 !important;*/
+/*  }*/
 
-  .selection {
-    margin-top: -107px;
-  }
+/*  .selection {*/
+/*    margin-top: -107px;*/
+/*  }*/
 
-  .related {
-    margin-top: -135px !important;
-  }
+/*  .related {*/
+/*    margin-top: -135px !important;*/
+/*  }*/
 
-  .section.user-profile {
-    margin: 0 auto 11px;
-  }
+/*  .section.user-profile {*/
+/*    margin: 0 auto 11px;*/
+/*  }*/
 
-}
+/*}*/
 
 
 @media (min-width: 1280px) {
@@ -2251,7 +2262,7 @@ body {
 
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1280px) {
 
   .selection-page .product {
     margin-top: 45px !important;
@@ -2259,7 +2270,7 @@ body {
   }
 
   .section.user-profile {
-    margin: 45px auto 11px;
+    margin: 45px auto 25px;
   }
 }
 
