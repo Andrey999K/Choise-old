@@ -90,21 +90,26 @@ const masonryInit = (widthScreen) => {
   let columnWidth = (document.querySelector(`.${classGrid}`).clientWidth - gap) / 2;
   let columnNumber = 2;
   const body = document.querySelector("body");
+
   if (widthScreen >= 1280) {
     if (body.className !== "product-page" && body.className !== "selection-page" && body.className !== "profile") {
       classGrid = "grid-desktop";
     }
-    columnWidth = 232;
+    columnWidth = 236;
     gap = 16;
     columnNumber = 5;
   }
+  const grid = document.querySelector(`.${classGrid}`);
   const gridItems = Array.from(document.querySelectorAll(`.${classGrid} .grid-item__container`));
+
+  grid.style.display = "block";
 
   // Если всего 1 карточка
   if (gridItems?.length === 1) {
+    gridItems[0].parentElement.style.position = "absolute";
     gridItems[0].parentElement.style.top = "0px";
     gridItems[0].parentElement.style.left = "0px";
-    document.querySelector(`.${classGrid}`).style.height = `${gridItems[0].clientHeight}px`;
+    grid.style.height = `${gridItems[0].clientHeight}px`;
     return;
   }
 
@@ -112,7 +117,7 @@ const masonryInit = (widthScreen) => {
   // if (gridItems?.length < columnNumber) {
   //   gridItems[0].parentElement.style.top = "0px";
   //   gridItems[0].parentElement.style.left = "0px";
-  //   document.querySelector(`.${classGrid}`).style.height = `${gridItems[0].clientHeight}px`;
+  //   grid.style.height = `${gridItems[0].clientHeight}px`;
   //   return;
   // }
 
@@ -124,6 +129,7 @@ const masonryInit = (widthScreen) => {
   if (gridItems?.length > 1) {
     for (let i = 1; i < gridItems.length; i++) {
       rowNumber = Math.floor(i / columnNumber);
+      gridItems[i].parentElement.style.position = "absolute";
       if (rowNumber === 0) {
         gridItems[i].parentElement.style.top = "0px";
         gridItems[i].parentElement.style.left = `${(columnWidth + gap) * (i % columnNumber)}px`;
@@ -134,7 +140,6 @@ const masonryInit = (widthScreen) => {
         heightColumns[numberColumn] += gap + gridItems[i].clientHeight;
       }
       if (i === gridItems.length - 1) {
-        const grid = document.querySelector(`.${classGrid}`);
         grid.style.height = `${findLowColumn(heightColumns)}px`;
         grid.style.overflow = "visible";
       }
